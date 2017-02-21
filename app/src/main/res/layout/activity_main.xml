@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="cn.hjf.grouplistview.MainActivity">
+
+    <Button
+        android:id="@+id/show_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="显示空分组-没有空分组"
+        android:onClick="show_no"/>
+
+    <Button
+        android:id="@+id/show_has"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="show_has"
+        android:text="显示空分组-有空分组"/>
+
+    <Button
+        android:id="@+id/hide_no"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="hide_no"
+        android:text="不显示空分组-没有空分组"/>
+
+    <Button
+        android:id="@+id/hide_has"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="hide_has"
+        android:text="不显示空分组-有空分组"/>
+</LinearLayout>
