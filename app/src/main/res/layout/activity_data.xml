@@ -13,6 +13,12 @@
     android:gravity="center"
     tools:context="cn.hjf.grouplistview.MainActivity">
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加数据"
+        android:onClick="addData"/>
+
     <cn.hjf.grouplistview.GroupListView
         android:id="@+id/lv"
         android:layout_width="match_parent"

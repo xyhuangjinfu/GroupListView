@@ -27,7 +27,7 @@ public class HideHas extends AppCompatActivity {
         groupListView = (GroupListView) findViewById(R.id.lv);
         groupListView.setShowEmptyGroup(false);
 
-        groupListView.setAdapter(new GroupListView.LabelDataAdapter() {
+        groupListView.setGroupDataAdapter(new GroupListView.GroupDataAdapter() {
             @Override
             public View getGroupView(int group, View convertView, ViewGroup parent) {
                 if (convertView == null) {
@@ -79,5 +79,8 @@ public class HideHas extends AppCompatActivity {
 //        }
     }
 
-
+    public void addData(View v) {
+        prepareData();
+        groupListView.refreshData();
+    }
 }

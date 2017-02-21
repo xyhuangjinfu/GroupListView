@@ -27,7 +27,7 @@ public class ShowHas extends AppCompatActivity {
         groupListView = (GroupListView) findViewById(R.id.lv);
         groupListView.setShowEmptyGroup(true);
 
-        groupListView.setAdapter(new GroupListView.LabelDataAdapter() {
+        groupListView.setGroupDataAdapter(new GroupListView.GroupDataAdapter() {
             @Override
             public View getGroupView(int group, View convertView, ViewGroup parent) {
                 if (convertView == null) {
@@ -77,6 +77,11 @@ public class ShowHas extends AppCompatActivity {
 //        for (int i = 0; i < 10; i++) {
 //            outService.add("已结束 ： " + i);
 //        }
+    }
+
+    public void addData(View v) {
+        prepareData();
+        groupListView.refreshData();
     }
 
 
