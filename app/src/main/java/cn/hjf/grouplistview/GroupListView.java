@@ -188,6 +188,10 @@ public class GroupListView extends ListView {
      * @return
      */
     private Map<Integer, Integer> getGroupAndSize() {
+        if (groupDataAdapter == null) {
+            throw new RuntimeException("groupDataAdapter cannot be null");
+        }
+
         Map<Integer, Integer> groupAndSize = new TreeMap<>(new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
@@ -286,6 +290,10 @@ public class GroupListView extends ListView {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
+            if (groupDataAdapter == null) {
+                throw new RuntimeException("groupDataAdapter cannot be null");
+            }
+
             int[] groupAndPosition = getGroupAndPosition(position);
             if (isGroup(groupAndPosition)) {
                 return groupDataAdapter.getGroupView(groupAndPosition[0],
@@ -297,7 +305,6 @@ public class GroupListView extends ListView {
                         getItemViewType(position) == TYPE_DATA ? convertView : null,
                         parent);
             }
-
         }
 
         @Override
