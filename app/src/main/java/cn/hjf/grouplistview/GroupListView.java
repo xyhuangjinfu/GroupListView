@@ -242,9 +242,13 @@ public class GroupListView extends ListView {
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             int[] groupAndPosition = getGroupAndPosition(position);
             if (groupAndPosition[1] == -1) {
-                onGroupAndDataClickListener.onGroupClick(groupAndPosition[0]);
+                if (onGroupAndDataClickListener != null) {
+                    onGroupAndDataClickListener.onGroupClick(groupAndPosition[0]);
+                }
             } else {
-                onGroupAndDataClickListener.onDataClick(groupAndPosition[0], groupAndPosition[1]);
+                if (onGroupAndDataClickListener != null) {
+                    onGroupAndDataClickListener.onDataClick(groupAndPosition[0], groupAndPosition[1]);
+                }
             }
         }
     }
